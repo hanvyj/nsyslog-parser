@@ -56,9 +56,9 @@ function splitFields(msg) {
 	var nextKey = "";
 	var curr = "";
 
-	msg.split("").forEach(ch=>{
+	msg.split("").forEach((ch,i)=>{
 		if(ch=="=") {
-			if(scape) {
+			if(scape || msg[i-1] === "/") {
 				// Escape this = and treat it like any other character
 				scape = false;
 				curr += ch;
