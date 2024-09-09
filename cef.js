@@ -58,7 +58,9 @@ function splitFields(msg) {
 
 	msg.split("").forEach(ch=>{
 		if(ch=="=") {
-			if(scape) {
+			if(scape ||
+				// false positive where our "=" has not been preceded by a space, this is likely meant to be escaped = (unless this is the first key)
+				(nextKey === curr) && Object.keys(map).length > 0) {
 				// Escape this = and treat it like any other character
 				scape = false;
 				curr += ch;

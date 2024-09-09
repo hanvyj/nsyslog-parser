@@ -668,6 +668,33 @@ test.each([
   },
   {
     originalMessage:
+      "Sep 19 08:26:10 host CEF:0|security|threatmanager|1.0|100|accessing a website with query parameter|10|src=10.0.0.1 address=https://awebsite.com?parameter=value",
+    pri: "",
+    prival: null,
+    type: "CEF",
+    ts: dateAsCurrentYear("2019-09-19T07:26:10.000Z"),
+    host: "host",
+    message:
+      "CEF:0|security|threatmanager|1.0|100|accessing a website with query parameter|10|src=10.0.0.1 address=https://awebsite.com?parameter=value",
+    chain: [],
+    cef: {
+      version: "CEF:0",
+      deviceVendor: "security",
+      deviceProduct: "threatmanager",
+      deviceVersion: "1.0",
+      deviceEventClassID: "100",
+      name: "accessing a website with query parameter",
+      severity: "10",
+      extension: "src=10.0.0.1 address=https://awebsite.com?parameter=value",
+    },
+    fields: {
+      src: "10.0.0.1",
+      address: "https://awebsite.com?parameter=value"
+    },
+    header: "Sep 19 08:26:10 host ",
+  },
+  {
+    originalMessage:
       "Jan 18 11:07:53 dsmhost CEF:0|Trend Micro|Deep Security Manager|<DSM version>|600|User Signed In|3|src=10.52.116.160 suser=admin target=admin msg=User signed in from 2001:db8::5",
     pri: "",
     prival: null,
